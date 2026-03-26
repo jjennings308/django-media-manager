@@ -21,6 +21,5 @@ dependencies = [
 s3 = ["boto3>=1.26"]
 cloudinary = ["cloudinary>=1.36"]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["media_manager*"]
+[tool.setuptools]
+packages = ["media_manager"]
