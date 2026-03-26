@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "django-media-manager"
+version = "0.1.0"
+description = "Reusable Django app for media uploads, albums, and moderation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = [
+    "Django>=4.2",
+    "django-taggit>=4.0",
+    "Pillow>=10.0",
+    "django-storages>=1.14",
+]
+
+[project.optional-dependencies]
+s3 = ["boto3>=1.26"]
+cloudinary = ["cloudinary>=1.36"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["media_manager*"]
