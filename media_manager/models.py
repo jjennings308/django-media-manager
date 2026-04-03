@@ -189,9 +189,9 @@ class Media(TimeStampedModel):
         ]
 
     def __str__(self):
-        filename = os.path.basename(self.file.name) if self.file else '(no file)'
-        return f"{filename} by {self.uploaded_by}"
-
+        display = self.title or (os.path.basename(self.file.name) if self.file else '(no file)')
+        return f"{display} by {self.uploaded_by}"
+    
     # -- Properties --
 
     @property
